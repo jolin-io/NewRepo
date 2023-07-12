@@ -1,0 +1,69 @@
+name: Test
+run-name: 👷 Testing all reactive notebooks
+on: [pull_request]
+env:
+  JOLIN_ENVIRONMENT: "test"
+jobs:
+  job-matrix:
+    runs-on: ubuntu-latest
+    container: jolincompany/jolin_cloud_cicd:latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: set-matrix
+        run: |
+          echo matrix=$(julia -e '
+            import Pkg
+            Pkg.Registry.add("General")
+            Pkg.Registry.add(Pkg.RegistrySpec(url="https://github.com/jolin-io/JolinRegistry.jl"))
+            Pkg.add("JolinPlutoCICD")
+            using JolinPlutoCICD
+            print(JolinPlutoCICD.json_common_prefix_common_suffix_and_all_notebook_paths(ARGS[1]))
+          ' .) >> "$GITHUB_OUTPUT"
+
+  job-run:
+    name: ${{ matrix.notebook_path }}
+    runs-on: ubuntu-latest
+    container: jolincompany/jolin_cloud_cicd:latest
+    needs: job-matrix
+    strategy:
+      matrix: ${{ fromJSON(needs.job-matrix.outputs.matrix) }}
+    permissions:
+      id-token: write  # This is required for requesting the JWT
+      contents: read  # This is required for actions/checkout
+    steps:
+    - uses: actions/checkout@v3
+
+    - run: |
+        julia -e '
+          import Pkg
+          Pkg.Registry.add("General")
+          Pkg.Registry.add(Pkg.RegistrySpec(url="https://github.com/jolin-io/JolinRegistry.jl"))
+          Pkg.add("JolinPlutoCICD")
+        '
+
+    # we need to create temporary environment under GITHUB_WORKSPACE, because only files under this directory will be cached
+    - run: |
+        echo notebook_env=$(julia -e '
+          using JolinPlutoCICD
+          print(JolinPlutoCICD.create_pluto_env(ARGS[1],
+            tempdir_parent=ENV["GITHUB_WORKSPACE"],
+            prefix="_tmp_envs/jl_",
+            return_relative_path=true))
+        ' "${{ matrix.prefix }}${{ matrix.notebook_path }}${{ matrix.suffix }}") >> "$GITHUB_ENV"
+
+    # fixing permission error for hashfiles (actually works)
+    # adapted from https://github.com/cypress-io/github-action/issues/446#issuecomment-968192021
+    - run: chown -R 1001:1001 $GITHUB_WORKSPACE/$notebook_env
+
+    - uses: actions/cache@v3
+      with:
+        path: ~/.julia
+        key: ${{ runner.os }}-${{ hashFiles(format('{0}/*.toml', env.notebook_env)) }}
+        restore-keys: ${{ runner.os }}-
+
+    - run: julia --project=$GITHUB_WORKSPACE/$notebook_env -e 'import Pkg; Pkg.instantiate()'
+
+    - working-directory: ./notebooks
+      run: julia --project=$GITHUB_WORKSPACE/$notebook_env "${{ matrix.prefix }}${{ matrix.notebook_path }}${{ matrix.suffix }}"
