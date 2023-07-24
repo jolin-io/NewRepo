@@ -20,6 +20,14 @@ begin
 	plotly()  # activate plotly plotting backend
 end
 
+# ╔═╡ eef0efc8-842e-46c2-aa59-e8d4b2e2beb4
+1 + 1
+
+# ╔═╡ cdb85e2c-9408-4134-82d9-7d33ba5506c1
+md"""
+# Hello world 
+"""
+
 # ╔═╡ 05ca2710-857d-4cb6-aff9-66cfa173cc53
 md"""
 # Julia Dashboard
@@ -176,7 +184,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "42998b5ecb39953d129d7f9dc9e2cfbfa64e2fcb"
+project_hash = "7dc623575788d22f7c459498e8c1a4e58f323504"
 
 [[deps.AWS]]
 deps = ["Base64", "Compat", "Dates", "Downloads", "GitHub", "HTTP", "IniFile", "JSON", "MbedTLS", "Mocking", "OrderedCollections", "Random", "SHA", "Sockets", "URIs", "UUIDs", "XMLDict"]
@@ -1428,6 +1436,8 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
+# ╠═eef0efc8-842e-46c2-aa59-e8d4b2e2beb4
+# ╠═cdb85e2c-9408-4134-82d9-7d33ba5506c1
 # ╟─05ca2710-857d-4cb6-aff9-66cfa173cc53
 # ╟─a239e7bd-deb1-4d9c-83f8-ad8be69dca71
 # ╠═79ce3b86-ea9e-11ed-1cb7-bf8f197cb3a8

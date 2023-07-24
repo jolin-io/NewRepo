@@ -26,6 +26,11 @@ begin
 	Base.setindex!(o::PyObject, v, s) = py"$o[$s] = $v"
 end
 
+# ╔═╡ 60a06207-dc69-4694-9a62-d1eaabb0d9c8
+md"""
+hi
+"""
+
 # ╔═╡ 3fa2cf9e-eaa3-11ed-29ac-6de296b44861
 md"""
 # Python Dashboard
@@ -289,7 +294,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "94593c369a3aabb2b8917367b2bbeacc43ebcf8a"
+project_hash = "df68946e46fa7dffaca75b00976be8386db3dba0"
 
 [[deps.AWS]]
 deps = ["Base64", "Compat", "Dates", "Downloads", "GitHub", "HTTP", "IniFile", "JSON", "MbedTLS", "Mocking", "OrderedCollections", "Random", "SHA", "Sockets", "URIs", "UUIDs", "XMLDict"]
@@ -914,6 +919,7 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
+# ╠═60a06207-dc69-4694-9a62-d1eaabb0d9c8
 # ╟─3fa2cf9e-eaa3-11ed-29ac-6de296b44861
 # ╠═709da6de-e873-4fa6-8065-9ac8c03be1b7
 # ╟─4f6fa5f9-0849-411a-8eee-ee9e636cb8b7
