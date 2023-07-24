@@ -20,14 +20,6 @@ begin
 	plotly()  # activate plotly plotting backend
 end
 
-# ╔═╡ eef0efc8-842e-46c2-aa59-e8d4b2e2beb4
-1 + 1
-
-# ╔═╡ cdb85e2c-9408-4134-82d9-7d33ba5506c1
-md"""
-# Hello world 
-"""
-
 # ╔═╡ 05ca2710-857d-4cb6-aff9-66cfa173cc53
 md"""
 # Julia Dashboard
@@ -1436,8 +1428,6 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═eef0efc8-842e-46c2-aa59-e8d4b2e2beb4
-# ╠═cdb85e2c-9408-4134-82d9-7d33ba5506c1
 # ╟─05ca2710-857d-4cb6-aff9-66cfa173cc53
 # ╟─a239e7bd-deb1-4d9c-83f8-ad8be69dca71
 # ╠═79ce3b86-ea9e-11ed-1cb7-bf8f197cb3a8
