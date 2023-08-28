@@ -144,7 +144,7 @@ myvar, myvarrerun = @testeval()
 another_func()
 
 # ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
-myvarrerun()
+
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
@@ -152,6 +152,7 @@ macro isolated_cell_ids()
 	
 	quote
 		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
+		
 		macro isolated_cell_ids_push!()
 			quote
 				cell_id = $(PlutoRunner.GiveMeCellID())
