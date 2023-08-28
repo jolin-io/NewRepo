@@ -141,7 +141,10 @@ end
 myvar = @testeval()
 
 # ╔═╡ b42d1d6c-f99e-4471-8baa-d8380f0d47cd
-another_func()
+begin
+	@show Dates.now()
+	another_func()
+end
 
 # ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
 myvarrerun()
