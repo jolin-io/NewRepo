@@ -97,7 +97,7 @@ PlutoRunner.GiveMeRegisterCleanupFunction()
 # ╔═╡ 53032629-301e-4c10-95c9-e0f03ca4da5a
 macro add_cell_id(cell_ids)
 	quote
-		my_cell_id = $(PlutoRunner.GiveMeCellID)
+		my_cell_id = $(PlutoRunner.GiveMeCellID())
 		push!(cell_ids, my_cell_id)
 		cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 		cleanup() do
