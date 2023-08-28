@@ -115,6 +115,7 @@ function (setter::Setter)(func::Function)
 	nothing
 end
 
+# traits support by default
 getsetter(setter::Setter) = setter
 Base.get(setter::Setter) = setter.value
 end
