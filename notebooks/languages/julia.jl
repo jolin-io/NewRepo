@@ -88,6 +88,12 @@ md"""
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
 
+# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
+set_a = setter()
+
+# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
+a = @get_state set_a
+
 # ╔═╡ 05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
 push!()
 
@@ -253,15 +259,6 @@ md"""
 Happy dashboarding 📈 📊!
 """
 
-# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
-a = @get_state set_a
-
-# ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
-a, set_a = @testref
-
-# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
-set_a = setter()
-
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -270,7 +267,6 @@ DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 JolinPluto = "5b0b4ef8-f4e6-4363-b674-3f031f7b9530"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-PlutoHooks = "0ff47ea0-7a50-410d-8455-4348d5de0774"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
@@ -278,7 +274,6 @@ CSV = "~0.10.11"
 DataFrames = "~1.5.0"
 JolinPluto = "~0.1.41"
 Plots = "~1.38.16"
-PlutoHooks = "~0.0.5"
 PlutoUI = "~0.7.51"
 """
 
@@ -288,7 +283,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "dec7fa5b8c88787e2eb3cd7a312c33baba96cd4f"
+project_hash = "681c7b8f6d1a97b22ebe724a7de52287ed683b67"
 
 [[deps.AWS]]
 deps = ["Base64", "Compat", "Dates", "Downloads", "GitHub", "HTTP", "IniFile", "JSON", "MbedTLS", "Mocking", "OrderedCollections", "Random", "SHA", "Sockets", "URIs", "UUIDs", "XMLDict"]
@@ -1006,12 +1001,6 @@ version = "1.38.16"
     ImageInTerminal = "d8c32880-2388-543b-8c61-d9f865259254"
     Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
-[[deps.PlutoHooks]]
-deps = ["InteractiveUtils", "Markdown", "UUIDs"]
-git-tree-sha1 = "072cdf20c9b0507fdd977d7d246d90030609674b"
-uuid = "0ff47ea0-7a50-410d-8455-4348d5de0774"
-version = "0.0.5"
-
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
 git-tree-sha1 = "b478a748be27bd2f2c73a7690da219d0844db305"
@@ -1560,7 +1549,6 @@ version = "1.4.1+0"
 # ╠═084ed3a1-089d-4c5e-bad5-925e6fc73945
 # ╠═c5b2dfb4-4ccd-4f75-8bbb-8d690486b48b
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
-# ╠═0f8c6eed-394f-4219-890b-a460942f3532
 # ╠═4eb4728b-afe8-4a9a-906f-40750f908226
 # ╠═35ffd88e-7f51-4596-9efe-903f09ac2dc8
 # ╠═d167928b-8a64-4f2a-97ad-33c1c3477d3d
