@@ -173,7 +173,23 @@ set_cell_ids = Setter(Set())
 cell_ids_wrapper = CellIDs()
 
 # ╔═╡ 7962fcf6-4e97-4fe2-afaf-611d72e6661b
-
+macro cell_ids_push!(setter)
+	setter = esc($setter)
+	quote
+		setter = getsetter($setter)
+		cell_id = $(PlutoRunner.GiveMeCellID())
+		setter() do cell_ids
+			push!(cell_ids, cell_id)
+		end
+		cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
+		cleanup() do
+			setter() do cell_ids
+				delete!(cell_ids, cell_id)
+			end
+		end
+		nothing
+	end
+end
 
 # ╔═╡ 5bd14405-079f-431a-9914-b2c744e2b78f
 push!()
@@ -1595,8 +1611,8 @@ version = "1.4.1+0"
 # ╠═32797db7-13f1-4af3-9424-8d7c9c03d1b0
 # ╠═e4cf0618-e9c6-407f-a8b6-ab40f84d87e8
 # ╠═3f312c2c-3cfc-4c67-9de4-582ff502f381
-# ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═7962fcf6-4e97-4fe2-afaf-611d72e6661b
+# ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═5bd14405-079f-431a-9914-b2c744e2b78f
 # ╠═74ab2315-a25a-492c-9735-f596185de530
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
