@@ -119,9 +119,6 @@ The visualization is enhanced by plotly. Note that we can simply reuse the alrea
 # ╔═╡ a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
 choose
 
-# ╔═╡ a3c66d01-402b-40e8-ad1b-534696785494
-
-
 # ╔═╡ 31adde32-492f-4c1d-929e-e46ba0a9943a
 # little helper to support plotly responsiveness
 # see this issue for updates https://github.com/JuliaPlots/Plots.jl/issues/4775
