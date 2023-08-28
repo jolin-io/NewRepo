@@ -136,7 +136,7 @@ macro testeval()
 end
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
-
+myvar = @testeval()
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
@@ -1562,6 +1562,7 @@ version = "1.4.1+0"
 # ╠═591b8313-15e5-497c-a92d-a4d249069808
 # ╠═d1e0486b-9bee-45b3-8386-8b15d51ab6a1
 # ╠═b40c757f-3348-4fae-9d57-f19c9d4fe34f
+# ╠═b42d1d6c-f99e-4471-8baa-d8380f0d47cd
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
 # ╠═ca13d2c2-f9e2-4595-bc78-2537238fa896
 # ╠═c7e4abfb-6813-4eb0-a31a-2b37e9438355
