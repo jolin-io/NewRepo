@@ -20,6 +20,9 @@ begin
 	plotly()  # activate plotly plotting backend
 end
 
+# ╔═╡ 4eb4728b-afe8-4a9a-906f-40750f908226
+using Dates
+
 # ╔═╡ 05ca2710-857d-4cb6-aff9-66cfa173cc53
 md"""
 # Julia Dashboard
@@ -101,9 +104,6 @@ end
 
 # ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
 a, set_a = @testref
-
-# ╔═╡ 4eb4728b-afe8-4a9a-906f-40750f908226
-
 
 # ╔═╡ 591b8313-15e5-497c-a92d-a4d249069808
 begin
@@ -213,6 +213,7 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 JolinPluto = "5b0b4ef8-f4e6-4363-b674-3f031f7b9530"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
@@ -231,7 +232,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "7dc623575788d22f7c459498e8c1a4e58f323504"
+project_hash = "f30da51737a44dc70e2587aecfd55327ba6a97e9"
 
 [[deps.AWS]]
 deps = ["Base64", "Compat", "Dates", "Downloads", "GitHub", "HTTP", "IniFile", "JSON", "MbedTLS", "Mocking", "OrderedCollections", "Random", "SHA", "Sockets", "URIs", "UUIDs", "XMLDict"]
