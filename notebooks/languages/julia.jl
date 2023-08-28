@@ -106,12 +106,10 @@ end
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
 	a = Ref{Any}(nothing)
-	esc(let
-		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
-
+	esc(begin
 		function set_a(a2)
 			$a[] = a2 
-			rerun()
+			$(PlutoRunner.GiveMeRerunCellFunction())()
 		end
 		$a[], set_a
 	end)
