@@ -112,7 +112,25 @@ begin
 end
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
-
+macro isolated_cell_ids()
+	cell_ids = Set()
+	
+	quote
+		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
+		macro isolated_cell_ids_push!()
+			quote
+				cell_id = $(PlutoRunner.GiveMeCellID())
+				push!($$cell_ids, cell_id)
+				cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
+				cleanup() do
+					delete!($$cell_ids, cell_id)
+				end
+				$rerun()
+				nothing
+			end
+		end
+		join("&isolated_cell_id=$id" for id in cell_ids)
+	end
 
 # ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
 cell_ids = Set()
@@ -121,13 +139,13 @@ cell_ids = Set()
 cell_ids
 
 # ╔═╡ 1226e9df-1df2-41cc-acd1-830b131c1a5e
-
+macro collect
 
 # ╔═╡ 53032629-301e-4c10-95c9-e0f03ca4da5a
 macro cell_id_push!(cell_ids)
 	quote
 		my_cell_id = $(PlutoRunner.GiveMeCellID())
-		push!(cell_ids, my_cell_id)
+		push!($cell_ids, my_cell_id)
 		cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 		cleanup() do
 			delete!($cell_ids, my_cell_id)
