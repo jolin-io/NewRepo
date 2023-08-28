@@ -134,7 +134,7 @@ Base.@kwdef mutable struct Setter{T}
 	rerun::Union{Nothing, Function} = nothing
 	Setter() = new{Any}(nothing)
 	Setter(initial_value::T) where T = new{T}(initial_value)
-	Setter{T}(initial_value) = new{T}(initial_value)
+	Setter{T}(initial_value) where T = new{T}(initial_value)
 end
 
 function (setter::Setter)(value)
