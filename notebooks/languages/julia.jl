@@ -100,7 +100,7 @@ mutable struct Setter{T}
 end
 
 function (setter::Setter)(value)
-	# this little boolean is to distinguish normal reexecution (recreation) from rerun.
+	# this little boolean distinguishes normal reexecution (recreation) from rerun execution.
 	setter.just_created = false
 	setter.value = value
 	setter.rerun !== nothing && setter.rerun()
