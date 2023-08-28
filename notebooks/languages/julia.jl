@@ -163,6 +163,11 @@ begin
 	newdate
 end
 
+# ╔═╡ 3f312c2c-3cfc-4c67-9de4-582ff502f381
+macro cell_ids_create_wrapper()
+	QuoteNode(Setter(Set()))
+end
+
 # ╔═╡ 7962fcf6-4e97-4fe2-afaf-611d72e6661b
 macro cell_ids_push!(setter)
 	setter = esc(setter)
@@ -188,6 +193,11 @@ push!()
 # ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
 cell_ids = @get cell_ids_wrapper
 join("&isolated_cell_id=$id" for id in cell_ids)
+
+# ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
+macro CellIDs()
+	Setter(Set())
+end
 
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 cell_ids_wrapper = @CellIDs()
@@ -285,16 +295,6 @@ md"""
 
 Happy dashboarding 📈 📊!
 """
-
-# ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
-macro CellIDs()
-	Setter(Set())
-end
-
-# ╔═╡ 3f312c2c-3cfc-4c67-9de4-582ff502f381
-macro CellIDs()
-	Setter(Set())
-end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
