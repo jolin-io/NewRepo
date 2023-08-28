@@ -86,7 +86,7 @@ We can combine multiple input widgets together using markdown string and interpo
 """
 
 # ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
-
+cell_ids = Set()
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 choose, choose_cell_id = md"""
