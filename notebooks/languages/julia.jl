@@ -90,12 +90,12 @@ We can combine multiple input widgets together using markdown string and interpo
 
 # ╔═╡ 22e2a1d6-2f94-494f-9d69-914805324899
 begin
-Base.@kwdef mutable struct Setter{T}
+mutable struct Setter{T}
 	value::T
-	rerun::Union{Nothing, Function} = nothing
-	Setter() = new{Any}(value = nothing)
-	Setter(initial_value::T) where T = new{T}(value = initial_value)
-	Setter{T}(initial_value) where T = new{T}(value = initial_value)
+	rerun::Union{Nothing, Function}
+	Setter() = new{Any}(nothing, nothing)
+	Setter(initial_value::T) where T = new{T}(initial_value, nothing)
+	Setter{T}(initial_value) where T = new{T}(initial_value, nothing)
 end
 
 function (setter::Setter)(value)
