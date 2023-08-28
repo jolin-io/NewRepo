@@ -112,6 +112,7 @@ macro get(setter)
 	firsttime = Ref(true)
 	quote
 		if $firsttime[]
+			$firsttime[] = false
 			$rerun[] = $(PlutoRunner.GiveMeRerunCellFunction())
 			if $setter.rerun !== nothing
 				@error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
@@ -121,7 +122,6 @@ macro get(setter)
 			cleanup() do
 				$setter.rerun = nothing
 			end
-			$firsttime[] = false
 		end
 		get(setter)
 	end
