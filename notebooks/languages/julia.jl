@@ -92,10 +92,10 @@ macro testref()
 		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 
 		function set_a(a2)
-			a[] = a2 
+			$a[] = a2 
 			rerun()
 		end
-		a[], set_a
+		$a[], set_a
 	end
 end	
 
