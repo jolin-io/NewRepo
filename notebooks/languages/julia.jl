@@ -86,7 +86,18 @@ We can combine multiple input widgets together using markdown string and interpo
 """
 
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
+macro testref()
+	a = Ref{Any}(nothing)
+	quote
+		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 
+		function set_a(a2)
+			a[] = a2 
+			rerun()
+		end
+		a[], set_a
+	end
+end	
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 
