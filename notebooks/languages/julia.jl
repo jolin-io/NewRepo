@@ -196,9 +196,6 @@ begin
 	join("&isolated_cell_id=$id" for id in cell_ids)
 end
 
-# ╔═╡ 4bde814a-223c-4e8b-9ddf-29f0854d7fc5
-
-
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 begin
 	choose = md"""
@@ -1571,7 +1568,6 @@ version = "1.4.1+0"
 # ╠═7962fcf6-4e97-4fe2-afaf-611d72e6661b
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═74ab2315-a25a-492c-9735-f596185de530
-# ╠═4bde814a-223c-4e8b-9ddf-29f0854d7fc5
 # ╠═ac931d72-9723-4ced-b048-aa769eeb0196
 # ╠═73474f4c-b760-4c84-96a1-4f7aff20ec31
 # ╠═86aca23a-a854-49c3-9d66-07fbc5159e8e
