@@ -257,10 +257,7 @@ You can view a condensed version of this notebook by appending the following to 
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
 # ╔═╡ 432ef749-39fc-48b7-a066-1e2bd8f868a8
-begin
-	cell_ids = @get cell_ids_wrapper
-	append_this = join("&isolated_cell_id=$id" for id in cell_ids)
-end
+cell_ids = @get cell_ids_wrapper
 
 # ╔═╡ aedb04d7-a69d-4fff-bf03-65d01169ccca
 md"""
@@ -1585,6 +1582,7 @@ version = "1.4.1+0"
 # ╠═b64eadc4-d455-4461-9697-6299decdee76
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═432ef749-39fc-48b7-a066-1e2bd8f868a8
+# ╠═d5d06218-a850-4293-8e4c-6e40bcd32c2a
 # ╟─aedb04d7-a69d-4fff-bf03-65d01169ccca
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
