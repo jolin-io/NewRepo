@@ -91,6 +91,9 @@ md"""
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
 
+# ╔═╡ 6f8a462c-f919-48ca-984f-6b2f45a1ea35
+
+
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
 	a = Ref{Any}(nothing)
