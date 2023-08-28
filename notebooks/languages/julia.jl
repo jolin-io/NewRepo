@@ -107,7 +107,7 @@ function (setter::Setter)(value)
 	nothing
 end
 
-Base.getsetter(setter::Setter) = setter
+getsetter(setter::Setter) = setter
 Base.get(setter::Setter) = setter.value
 end
 
