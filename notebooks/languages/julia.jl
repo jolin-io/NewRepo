@@ -132,7 +132,7 @@ macro get(setter)
 end
 
 # ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
-set_c = Setter()
+set_c = Setter(1)
 
 # ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
 c = @get set_c
