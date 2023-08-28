@@ -106,7 +106,7 @@ end
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
 	a = Ref{Any}(nothing)
-	esc(quote
+	esc(let
 		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 
 		function set_a(a2)
