@@ -121,6 +121,7 @@ macro get(setter)
 			cleanup() do
 				$setter.rerun = nothing
 			end
+			$firsttime[] = false
 		end
 		get(setter)
 	end
