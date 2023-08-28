@@ -131,7 +131,7 @@ end
 set_c = Setter()
 
 # ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
-c = @macroexpand @get set_c
+c = @get set_c
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
 myvar = @testeval()
