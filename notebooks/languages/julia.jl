@@ -91,14 +91,17 @@ We can combine multiple input widgets together using markdown string and interpo
 # ╔═╡ 22e2a1d6-2f94-494f-9d69-914805324899
 begin
 mutable struct Setter{T}
+	just_created::Bool
 	value::T
 	rerun::Union{Nothing, Function}
-	Setter() = new{Any}(nothing, nothing)
-	Setter(initial_value::T) where T = new{T}(initial_value, nothing)
-	Setter{T}(initial_value) where T = new{T}(initial_value, nothing)
+	Setter() = new{Any}(true, nothing, nothing)
+	Setter(initial_value::T) where T = new{T}(true, initial_value, nothing)
+	Setter{T}(initial_value) where T = new{T}(true, initial_value, nothing)
 end
 
 function (setter::Setter)(value)
+	# this little boolean is to distinguish normal reexecution (recreation) from rerun.
+	setter.just_created = false
 	setter.value = value
 	setter.rerun !== nothing && setter.rerun()
 	nothing
@@ -113,9 +116,9 @@ macro get(setter)
 	firsttime = Ref(true)
 	quote
 		isa($setter, Setter) || @error "`@get` only works on `Setter` values."
+		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 		if $firsttime[]
 			$firsttime[] = false
-			rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 			cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 			cleanup() do
 				if $setter.rerun === rerun
