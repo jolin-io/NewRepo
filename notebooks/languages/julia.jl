@@ -106,7 +106,7 @@ end
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
 	a = Ref{Any}(nothing)
-	quote
+	esc(quote
 		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 
 		function set_a(a2)
@@ -114,7 +114,7 @@ macro testref()
 			rerun()
 		end
 		$a[], set_a
-	end
+	end)
 end	
 
 # ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
