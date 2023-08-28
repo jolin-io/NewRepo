@@ -125,7 +125,7 @@ macro get(setter)
 			end
 			$setter.rerun = rerun
 		end
-		get(setter)
+		get($setter)
 	end
 end
 
