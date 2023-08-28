@@ -131,7 +131,7 @@ end
 macro testeval()
 	another_var_ref = Ref(4)
 	quote
-		@eval another_var = $another_var_ref[]
+		@eval another_func() = $another_var_ref[]
 		$another_var_ref[] += 1
 		$another_var_ref[], $(PlutoRunner.GiveMeRerunCellFunction())
 	end
