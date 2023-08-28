@@ -85,6 +85,9 @@ md"""
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
 
+# ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
+
+
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 
 
@@ -1471,6 +1474,7 @@ version = "1.4.1+0"
 # ╠═084ed3a1-089d-4c5e-bad5-925e6fc73945
 # ╠═c5b2dfb4-4ccd-4f75-8bbb-8d690486b48b
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
+# ╠═e98574c7-8b09-47f9-b39f-544099c0d4db
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
 # ╠═ca13d2c2-f9e2-4595-bc78-2537238fa896
 # ╠═c7e4abfb-6813-4eb0-a31a-2b37e9438355
