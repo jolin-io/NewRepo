@@ -146,7 +146,7 @@ begin
 end
 
 # ╔═╡ 5bd14405-079f-431a-9914-b2c744e2b78f
-setter.rerun
+set_c.rerun
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
 myvar = @testeval()
