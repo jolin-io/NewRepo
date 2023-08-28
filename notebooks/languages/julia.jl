@@ -143,6 +143,9 @@ myvar = @testeval()
 # ╔═╡ b42d1d6c-f99e-4471-8baa-d8380f0d47cd
 another_func()
 
+# ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
+myvarrerun()
+
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
 	cell_ids = Set()
@@ -1568,6 +1571,7 @@ version = "1.4.1+0"
 # ╠═d1e0486b-9bee-45b3-8386-8b15d51ab6a1
 # ╠═b40c757f-3348-4fae-9d57-f19c9d4fe34f
 # ╠═b42d1d6c-f99e-4471-8baa-d8380f0d47cd
+# ╠═74ab2315-a25a-492c-9735-f596185de530
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
 # ╠═ca13d2c2-f9e2-4595-bc78-2537238fa896
 # ╠═c7e4abfb-6813-4eb0-a31a-2b37e9438355
