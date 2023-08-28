@@ -91,12 +91,12 @@ We can combine multiple input widgets together using markdown string and interpo
 # ╔═╡ 22e2a1d6-2f94-494f-9d69-914805324899
 begin
 mutable struct Setter{T}
-	just_created::Bool
 	value::T
+	just_created::Bool
 	rerun::Union{Nothing, Function}
-	Setter() = new{Any}(true, nothing, nothing)
-	Setter(initial_value::T) where T = new{T}(true, initial_value, nothing)
-	Setter{T}(initial_value) where T = new{T}(true, initial_value, nothing)
+	Setter() = new{Any}(nothing, true, nothing)
+	Setter(initial_value::T) where T = new{T}(initial_value, true, nothing)
+	Setter{T}(initial_value) where T = new{T}(initial_value, true, nothing)
 end
 
 function (setter::Setter)(value)
