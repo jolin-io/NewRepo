@@ -88,6 +88,9 @@ We can combine multiple input widgets together using markdown string and interpo
 # ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
 cell_ids = Set()
 
+# ╔═╡ c7e4abfb-6813-4eb0-a31a-2b37e9438355
+
+
 # ╔═╡ 446ff809-a40c-4fd4-9c93-93ee26dbdebf
 PlutoRunner.GiveMeRegisterCleanupFunction()
 
@@ -1469,6 +1472,7 @@ version = "1.4.1+0"
 # ╠═c5b2dfb4-4ccd-4f75-8bbb-8d690486b48b
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
 # ╠═ca13d2c2-f9e2-4595-bc78-2537238fa896
+# ╠═c7e4abfb-6813-4eb0-a31a-2b37e9438355
 # ╠═446ff809-a40c-4fd4-9c93-93ee26dbdebf
 # ╠═53032629-301e-4c10-95c9-e0f03ca4da5a
 # ╠═f0f9f9d5-34aa-4a23-b0ee-6c4cfcaf7bde
