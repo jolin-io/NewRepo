@@ -103,6 +103,8 @@ function (setter::Setter)(value)
 	setter.rerun !== nothing && setter.rerun()
 	nothing
 end
+
+Base.get(setter::Setter) = setter.value
 end
 
 # ╔═╡ d1e0486b-9bee-45b3-8386-8b15d51ab6a1
