@@ -105,7 +105,10 @@ macro add_cell_id(cell_ids)
 end
 
 # ╔═╡ f0f9f9d5-34aa-4a23-b0ee-6c4cfcaf7bde
-
+begin
+	@add_cell_id(cell_ids)
+	Slider(1:10)
+end
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 choose, choose_cell_id = md"""
