@@ -187,9 +187,6 @@ macro cell_ids_push!(setter)
 	end
 end
 
-# ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
-cell_ids_wrapper = @cell_ids_create_wrapper()
-
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 begin
 	choose = md"""
@@ -248,6 +245,12 @@ begin
 	plot!(subdata2[!, xaxis], subdata2[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country2)
 	plotly_responsive()
 end
+
+# ╔═╡ b64eadc4-d455-4461-9697-6299decdee76
+
+
+# ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
+cell_ids_wrapper = @cell_ids_create_wrapper()
 
 # ╔═╡ 432ef749-39fc-48b7-a066-1e2bd8f868a8
 
@@ -1572,6 +1575,7 @@ version = "1.4.1+0"
 # ╠═a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
 # ╠═aaf50fdb-2955-4c37-9ee1-085f51dd7940
 # ╟─31adde32-492f-4c1d-929e-e46ba0a9943a
+# ╠═b64eadc4-d455-4461-9697-6299decdee76
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═432ef749-39fc-48b7-a066-1e2bd8f868a8
 # ╟─aedb04d7-a69d-4fff-bf03-65d01169ccca
