@@ -115,24 +115,24 @@ macro get(setter)
 	setter = esc(setter)
 	firsttime = Ref(true)
 	quote
-		isa($setter, Setter) || @error "`@get` only works on `Setter` values."
-		if $firsttime[] || $setter.just_created
+		setter = getsetter($setter)
+		if $firsttime[] || setter.just_created
 			rerun = $(PlutoRunner.GiveMeRerunCellFunction())
-			if $setter.rerun !== nothing
+			if setter.rerun !== nothing
 				@error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
 			end
-			$setter.rerun = rerun
+			setter.rerun = rerun
 		end
 		if $firsttime[]
 			$firsttime[] = false
 			cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 			cleanup() do
-				if $setter.rerun === rerun
-					$setter.rerun = nothing
+				if setter.rerun === rerun
+					setter.rerun = nothing
 				end
 			end
 		end
-		get($setter)
+		get(setter)
 	end
 end
 
