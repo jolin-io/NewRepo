@@ -89,7 +89,7 @@ We can combine multiple input widgets together using markdown string and interpo
 
 
 # ╔═╡ 5545af86-9354-4d3b-8861-5d2f65a37021
-
+join("hi" for i in 1:10)
 
 # ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
 cell_ids = Set()
