@@ -106,7 +106,7 @@ end
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 begin
-	cell_id_push!(cell_ids)
+	@cell_id_push!(cell_ids)
 	choose = md"""
 	| Parameter | Choose |
 	| --------- | :----- |
