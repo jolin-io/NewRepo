@@ -156,9 +156,6 @@ end
 # ╔═╡ 5bd14405-079f-431a-9914-b2c744e2b78f
 set_c.rerun
 
-# ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
-myvar = @testeval()
-
 # ╔═╡ b42d1d6c-f99e-4471-8baa-d8380f0d47cd
 begin
 	@show Dates.now()
@@ -1582,7 +1579,6 @@ version = "1.4.1+0"
 # ╠═32797db7-13f1-4af3-9424-8d7c9c03d1b0
 # ╠═e4cf0618-e9c6-407f-a8b6-ab40f84d87e8
 # ╠═5bd14405-079f-431a-9914-b2c744e2b78f
-# ╠═b40c757f-3348-4fae-9d57-f19c9d4fe34f
 # ╠═b42d1d6c-f99e-4471-8baa-d8380f0d47cd
 # ╠═74ab2315-a25a-492c-9735-f596185de530
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
