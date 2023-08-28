@@ -247,7 +247,11 @@ begin
 end
 
 # ╔═╡ b64eadc4-d455-4461-9697-6299decdee76
+md"""
+### Isolate specific Cells
 
+You can view a condensed version of this notebook by appending the following to the current url.
+"""
 
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 cell_ids_wrapper = @cell_ids_create_wrapper()
