@@ -20,6 +20,9 @@ begin
 	plotly()  # activate plotly plotting backend
 end
 
+# ╔═╡ 0318f1f7-7d12-4dfd-9100-81e676237f6c
+using PlutoHooks
+
 # ╔═╡ 4eb4728b-afe8-4a9a-906f-40750f908226
 using Dates
 
@@ -87,9 +90,6 @@ md"""
 
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
-
-# ╔═╡ 0318f1f7-7d12-4dfd-9100-81e676237f6c
-
 
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
@@ -237,6 +237,7 @@ DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 JolinPluto = "5b0b4ef8-f4e6-4363-b674-3f031f7b9530"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+PlutoHooks = "0ff47ea0-7a50-410d-8455-4348d5de0774"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
@@ -244,6 +245,7 @@ CSV = "~0.10.11"
 DataFrames = "~1.5.0"
 JolinPluto = "~0.1.41"
 Plots = "~1.38.16"
+PlutoHooks = "~0.0.5"
 PlutoUI = "~0.7.51"
 """
 
@@ -253,7 +255,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "f30da51737a44dc70e2587aecfd55327ba6a97e9"
+project_hash = "dec7fa5b8c88787e2eb3cd7a312c33baba96cd4f"
 
 [[deps.AWS]]
 deps = ["Base64", "Compat", "Dates", "Downloads", "GitHub", "HTTP", "IniFile", "JSON", "MbedTLS", "Mocking", "OrderedCollections", "Random", "SHA", "Sockets", "URIs", "UUIDs", "XMLDict"]
@@ -971,6 +973,12 @@ version = "1.38.16"
     ImageInTerminal = "d8c32880-2388-543b-8c61-d9f865259254"
     Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
+[[deps.PlutoHooks]]
+deps = ["InteractiveUtils", "Markdown", "UUIDs"]
+git-tree-sha1 = "072cdf20c9b0507fdd977d7d246d90030609674b"
+uuid = "0ff47ea0-7a50-410d-8455-4348d5de0774"
+version = "0.0.5"
+
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
 git-tree-sha1 = "b478a748be27bd2f2c73a7690da219d0844db305"
@@ -1520,6 +1528,7 @@ version = "1.4.1+0"
 # ╠═c5b2dfb4-4ccd-4f75-8bbb-8d690486b48b
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
 # ╠═0318f1f7-7d12-4dfd-9100-81e676237f6c
+# ╠═6f8a462c-f919-48ca-984f-6b2f45a1ea35
 # ╠═e98574c7-8b09-47f9-b39f-544099c0d4db
 # ╠═0f8c6eed-394f-4219-890b-a460942f3532
 # ╠═4eb4728b-afe8-4a9a-906f-40750f908226
