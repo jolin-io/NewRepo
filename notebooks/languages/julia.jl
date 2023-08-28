@@ -94,7 +94,7 @@ macro testref()
 	quote
 		rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 
-		function set_a(a2)
+		set_a = (a2) -> begin
 			$a[] = a2 
 			rerun()
 		end
