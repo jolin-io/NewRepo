@@ -87,7 +87,7 @@ We can combine multiple input widgets together using markdown string and interpo
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 begin
-@info PlutoRunner.currently_running_cell_id()
+@info PlutoRunner.currently_running_cell_id
 choose = md"""
 | Parameter | Choose |
 | --------- | :----- |
