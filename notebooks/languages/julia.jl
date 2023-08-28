@@ -142,6 +142,7 @@ end
 
 # ╔═╡ aaf50fdb-2955-4c37-9ee1-085f51dd7940
 begin
+	@info PlutoRunner.currently_running_cell_id
 	plot(subdata1[!, xaxis], subdata1[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country1, legend_position=:topleft)
 	plot!(subdata2[!, xaxis], subdata2[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country2)
 	plotly_responsive()
@@ -1455,7 +1456,6 @@ version = "1.4.1+0"
 # ╠═426c4994-f47f-465d-b2ca-c40d2a77d73e
 # ╟─2397576c-b463-4e93-89ce-ffa4718791aa
 # ╠═a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
-# ╠═a3c66d01-402b-40e8-ad1b-534696785494
 # ╠═aaf50fdb-2955-4c37-9ee1-085f51dd7940
 # ╟─31adde32-492f-4c1d-929e-e46ba0a9943a
 # ╟─aedb04d7-a69d-4fff-bf03-65d01169ccca
