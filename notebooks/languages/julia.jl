@@ -128,7 +128,9 @@ begin
 end
 
 # ╔═╡ d1e0486b-9bee-45b3-8386-8b15d51ab6a1
-
+macro testeval()
+	quote
+		@eval another_var = 4
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
