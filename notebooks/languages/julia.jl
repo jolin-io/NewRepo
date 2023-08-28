@@ -85,6 +85,9 @@ md"""
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
 
+# ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
+
+
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 choose, choose_cell_id = md"""
 | Parameter | Choose |
@@ -1443,6 +1446,7 @@ version = "1.4.1+0"
 # ╠═084ed3a1-089d-4c5e-bad5-925e6fc73945
 # ╠═c5b2dfb4-4ccd-4f75-8bbb-8d690486b48b
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
+# ╠═ca13d2c2-f9e2-4595-bc78-2537238fa896
 # ╠═ac931d72-9723-4ced-b048-aa769eeb0196
 # ╠═73474f4c-b760-4c84-96a1-4f7aff20ec31
 # ╠═86aca23a-a854-49c3-9d66-07fbc5159e8e
