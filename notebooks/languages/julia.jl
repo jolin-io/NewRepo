@@ -20,9 +20,6 @@ begin
 	plotly()  # activate plotly plotting backend
 end
 
-# ╔═╡ 0318f1f7-7d12-4dfd-9100-81e676237f6c
-using PlutoHooks
-
 # ╔═╡ 4eb4728b-afe8-4a9a-906f-40750f908226
 using Dates
 
