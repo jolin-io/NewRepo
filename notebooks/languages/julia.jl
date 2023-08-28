@@ -88,12 +88,6 @@ md"""
 We can combine multiple input widgets together using markdown string and interpolation syntax `$`. E.g. let's bring everything into a table.
 """
 
-# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
-set_a = setter()
-
-# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
-a = @get_state set_a
-
 # ╔═╡ 22e2a1d6-2f94-494f-9d69-914805324899
 begin
 Base.@kwdef mutable struct Setter{T}
@@ -118,6 +112,9 @@ macro get(setter)
 	quote
 		if $firsttime[]
 			$rerun[] = $(PlutoRunner.GiveMeRerunCellFunction())
+			if $setter.rerun !== nothing
+				@error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
+			end
 			$setter.rerun = $rerun[]
 			cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 			cleanup() do
@@ -127,6 +124,12 @@ macro get(setter)
 		get(setter)
 	end
 end
+
+# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
+set_c = Setter()
+
+# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
+c = @get set_c
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
 myvar = @testeval()
