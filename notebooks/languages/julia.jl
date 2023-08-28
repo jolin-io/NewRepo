@@ -204,9 +204,6 @@ macro CellIDs()
 	Setter(Set())
 end
 
-# ╔═╡ c7e4abfb-6813-4eb0-a31a-2b37e9438355
-cell_ids
-
 # ╔═╡ 1226e9df-1df2-41cc-acd1-830b131c1a5e
 macro collect
 
@@ -1598,7 +1595,6 @@ version = "1.4.1+0"
 # ╠═b4b867ef-dd04-4788-a747-e5686ae6c54b
 # ╠═74ab2315-a25a-492c-9735-f596185de530
 # ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
-# ╠═1226e9df-1df2-41cc-acd1-830b131c1a5e
 # ╠═53032629-301e-4c10-95c9-e0f03ca4da5a
 # ╠═ac931d72-9723-4ced-b048-aa769eeb0196
 # ╠═73474f4c-b760-4c84-96a1-4f7aff20ec31
