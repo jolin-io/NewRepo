@@ -107,6 +107,7 @@ end
 
 # ╔═╡ d1e0486b-9bee-45b3-8386-8b15d51ab6a1
 macro get(setter)
+	setter = esc(setter)
 	rerun = Ref{Function}()
 	firsttime = Ref(true)
 	quote
