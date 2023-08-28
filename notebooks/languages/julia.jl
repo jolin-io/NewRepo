@@ -138,7 +138,10 @@ set_c = Setter(Dates.now())
 c = @get set_c
 
 # ╔═╡ e4cf0618-e9c6-407f-a8b6-ab40f84d87e8
-
+begin
+	@show Dates.now()
+	set_c(Dates.now())
+end
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
 myvar = @testeval()
