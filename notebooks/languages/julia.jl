@@ -115,9 +115,6 @@ macro testref()
 	end)
 end	
 
-# ╔═╡ 01149b68-c48f-4b54-9e08-a521b32096e3
-set_a
-
 # ╔═╡ 05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
 push!()
 
