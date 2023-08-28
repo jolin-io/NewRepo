@@ -95,7 +95,10 @@ We can combine multiple input widgets together using markdown string and interpo
 b, set_b = @use_state(Dates.now())
 
 # ╔═╡ ae6f002b-3aa8-4fa7-be95-f0112800c4af
-
+begin
+	println(Dates.now())
+	set_b(Dates.now())
+end
 
 # ╔═╡ e98574c7-8b09-47f9-b39f-544099c0d4db
 macro testref()
