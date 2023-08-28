@@ -187,28 +187,8 @@ macro cell_ids_push!(setter)
 	end
 end
 
-# ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
-begin
-	choose = md"""
-	| Parameter | Choose |
-	| --------- | :----- |
-	| region 1 | $(@bind country1 PlutoUI.Select(countries; default="World")) |
-	| region 2 | $(@bind country2 PlutoUI.Select(countries; default="Germany")) |
-	| compare   | $(@bind yaxis PlutoUI.Select(columns; default="co2_per_capita")) |
-	"""
-end
-
-# ╔═╡ 73474f4c-b760-4c84-96a1-4f7aff20ec31
-(; yaxis, country1, country2)
-
 # ╔═╡ 86aca23a-a854-49c3-9d66-07fbc5159e8e
 xaxis = "year"
-
-# ╔═╡ 8d48cc04-91c5-4861-b2b2-925157297f71
-subdata1 = filter(row -> row.country == country1, data);
-
-# ╔═╡ 426c4994-f47f-465d-b2ca-c40d2a77d73e
-subdata2 = filter(row -> row.country == country2, data)
 
 # ╔═╡ 2397576c-b463-4e93-89ce-ffa4718791aa
 md"""
@@ -216,9 +196,6 @@ md"""
 
 The visualization is enhanced by plotly. Note that we can simply reuse the already defined input widgets.
 """
-
-# ╔═╡ a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
-choose
 
 # ╔═╡ 31adde32-492f-4c1d-929e-e46ba0a9943a
 # little helper to support plotly responsiveness
@@ -238,14 +215,6 @@ function plotly_responsive(plt=Plots.current())
 	))
 end
 
-# ╔═╡ aaf50fdb-2955-4c37-9ee1-085f51dd7940
-begin
-	@info PlutoRunner.currently_running_cell_id
-	plot(subdata1[!, xaxis], subdata1[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country1, legend_position=:topleft)
-	plot!(subdata2[!, xaxis], subdata2[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country2)
-	plotly_responsive()
-end
-
 # ╔═╡ b64eadc4-d455-4461-9697-6299decdee76
 md"""
 # Isolate specific Cells
@@ -255,6 +224,38 @@ You can view a condensed version of this notebook by appending the following to 
 
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 cell_ids_wrapper = @cell_ids_create_wrapper()
+
+# ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
+begin
+	@cell_ids_push! cell_ids_wrapper
+	choose = md"""
+	| Parameter | Choose |
+	| --------- | :----- |
+	| region 1 | $(@bind country1 PlutoUI.Select(countries; default="World")) |
+	| region 2 | $(@bind country2 PlutoUI.Select(countries; default="Germany")) |
+	| compare   | $(@bind yaxis PlutoUI.Select(columns; default="co2_per_capita")) |
+	"""
+end
+
+# ╔═╡ 73474f4c-b760-4c84-96a1-4f7aff20ec31
+(; yaxis, country1, country2)
+
+# ╔═╡ 8d48cc04-91c5-4861-b2b2-925157297f71
+subdata1 = filter(row -> row.country == country1, data);
+
+# ╔═╡ 426c4994-f47f-465d-b2ca-c40d2a77d73e
+subdata2 = filter(row -> row.country == country2, data)
+
+# ╔═╡ a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
+choose
+
+# ╔═╡ aaf50fdb-2955-4c37-9ee1-085f51dd7940
+begin
+	@cell_ids_push! cell_ids_wrapper
+	plot(subdata1[!, xaxis], subdata1[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country1, legend_position=:topleft)
+	plot!(subdata2[!, xaxis], subdata2[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country2)
+	plotly_responsive()
+end
 
 # ╔═╡ 432ef749-39fc-48b7-a066-1e2bd8f868a8
 # this should always be in another cell as the wrapper creation
