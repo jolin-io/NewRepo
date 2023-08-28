@@ -107,6 +107,14 @@ function (setter::Setter)(value)
 	nothing
 end
 
+function (setter::Setter)(func::Function)
+	# this little boolean distinguishes normal reexecution (recreation) from rerun execution.
+	setter.just_created = false
+	setter.value = func(setter.value)
+	setter.rerun !== nothing && setter.rerun()
+	nothing
+end
+
 getsetter(setter::Setter) = setter
 Base.get(setter::Setter) = setter.value
 end
@@ -155,10 +163,10 @@ begin
 end
 
 # ╔═╡ 5bd14405-079f-431a-9914-b2c744e2b78f
-set_c.rerun
+push!()
 
 # ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
-myvarrerun()
+
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
