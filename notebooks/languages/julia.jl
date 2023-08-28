@@ -108,7 +108,7 @@ a, set_a2 = @testref
 # ╔═╡ 591b8313-15e5-497c-a92d-a4d249069808
 begin
 	println(Dates.now())
-	set_a(Dates.now())
+	set_a2(Dates.now())
 end
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
