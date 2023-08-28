@@ -86,6 +86,8 @@ We can combine multiple input widgets together using markdown string and interpo
 """
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
+begin
+@info PlutoRunner.currently_running_cell_id()
 choose = md"""
 | Parameter | Choose |
 | --------- | :----- |
@@ -93,6 +95,7 @@ choose = md"""
 | region 2 | $(@bind country2 PlutoUI.Select(countries; default="Germany")) |
 | compare   | $(@bind yaxis PlutoUI.Select(columns; default="co2_per_capita")) |
 """
+end
 
 # ╔═╡ 73474f4c-b760-4c84-96a1-4f7aff20ec31
 (; yaxis, country1, country2)
