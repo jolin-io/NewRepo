@@ -115,9 +115,6 @@ macro testref()
 	end)
 end	
 
-# ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
-a, set_a = @testref
-
 # ╔═╡ 01149b68-c48f-4b54-9e08-a521b32096e3
 set_a
 
@@ -127,25 +124,40 @@ begin
 	set_a(Dates.now())
 end
 
-# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
-
-
-# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
-
-
 # ╔═╡ 05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
-
+push!()
 
 # ╔═╡ 22e2a1d6-2f94-494f-9d69-914805324899
+begin
+Base.@kwdef mutable struct Setter{T}
+	value::T
+	rerun::Union{Nothing, Function} = nothing
+	Setter() = new{Any}(initial_value)
+	Setter(initial_value::T) where T = new{T}(initial_value)
+	Setter{T}(initial_value) = new{T}(initial_value)
+end
 
+function (setter::Setter)(value)
+	setter.value = value
+	setter.rerun !== nothing && setter.rerun()
+	nothing
+end
+end
 
 # ╔═╡ d1e0486b-9bee-45b3-8386-8b15d51ab6a1
-macro testeval()
-	another_var_ref = Ref(4)
+macro get(setter)
+	rerun = Ref{Function}()
+	firsttime = Ref(true)
 	quote
-		@eval another_func() = $another_var_ref[]
-		$another_var_ref[] += 1
-		$another_var_ref[]
+		if $firsttime[]
+			$rerun[] = $(PlutoRunner.GiveMeRerunCellFunction())
+			$setter.rerun = $rerun[]
+			cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
+			cleanup() do
+				$setter.rerun = nothing
+			end
+		end
+		get(setter)
 	end
 end
 
@@ -276,6 +288,15 @@ md"""
 
 Happy dashboarding 📈 📊!
 """
+
+# ╔═╡ d167928b-8a64-4f2a-97ad-33c1c3477d3d
+a = @get_state set_a
+
+# ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
+a, set_a = @testref
+
+# ╔═╡ 35ffd88e-7f51-4596-9efe-903f09ac2dc8
+set_a = setter()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
