@@ -199,11 +199,6 @@ begin
 	join("&isolated_cell_id=$id" for id in cell_ids)
 end
 
-# ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
-macro CellIDs()
-	Setter(Set())
-end
-
 # ╔═╡ 53032629-301e-4c10-95c9-e0f03ca4da5a
 macro cell_id_push!(cell_ids)
 	quote
@@ -1591,7 +1586,6 @@ version = "1.4.1+0"
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═b4b867ef-dd04-4788-a747-e5686ae6c54b
 # ╠═74ab2315-a25a-492c-9735-f596185de530
-# ╠═182f7b6c-cb26-41dc-ad6c-6c474a340231
 # ╠═53032629-301e-4c10-95c9-e0f03ca4da5a
 # ╠═ac931d72-9723-4ced-b048-aa769eeb0196
 # ╠═73474f4c-b760-4c84-96a1-4f7aff20ec31
