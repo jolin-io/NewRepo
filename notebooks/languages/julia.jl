@@ -187,6 +187,9 @@ macro cell_ids_push!(setter)
 	end
 end
 
+# ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
+cell_ids_wrapper = @cell_ids_create_wrapper()
+
 # ╔═╡ 5bd14405-079f-431a-9914-b2c744e2b78f
 push!()
 
@@ -198,9 +201,6 @@ join("&isolated_cell_id=$id" for id in cell_ids)
 macro CellIDs()
 	Setter(Set())
 end
-
-# ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
-cell_ids_wrapper = @CellIDs()
 
 # ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
 cell_ids = Set()
