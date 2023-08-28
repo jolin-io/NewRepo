@@ -251,7 +251,6 @@ choose
 
 # ╔═╡ aaf50fdb-2955-4c37-9ee1-085f51dd7940
 begin
-	@cell_ids_push! cell_ids_wrapper
 	plot(subdata1[!, xaxis], subdata1[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country1, legend_position=:topleft)
 	plot!(subdata2[!, xaxis], subdata2[!, yaxis], xlabel=xaxis, ylabel=yaxis, label=country2)
 	plotly_responsive()
