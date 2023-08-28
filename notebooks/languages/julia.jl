@@ -108,23 +108,22 @@ end
 # ╔═╡ d1e0486b-9bee-45b3-8386-8b15d51ab6a1
 macro get(setter)
 	setter = esc(setter)
-	rerun = Ref{Function}()
 	firsttime = Ref(true)
 	quote
 		isa($setter, Setter) || @error "`@get` only works on `Setter` values."
 		if $firsttime[]
 			$firsttime[] = false
-			$rerun[] = $(PlutoRunner.GiveMeRerunCellFunction())
+			rerun = $(PlutoRunner.GiveMeRerunCellFunction())
 			cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
 			cleanup() do
-				if $setter.rerun === $rerun[]
+				if $setter.rerun === rerun
 					$setter.rerun = nothing
 				end
 			end
 			if $setter.rerun !== nothing
 				@error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
 			end
-			$setter.rerun = $rerun[]
+			$setter.rerun = rerun
 		end
 		get(setter)
 	end
