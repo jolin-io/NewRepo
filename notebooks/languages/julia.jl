@@ -191,7 +191,7 @@ end
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
 # ╔═╡ b4b867ef-dd04-4788-a747-e5686ae6c54b
-
+@cell_ids_push! cell_ids_wrapper
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro CellIDs()
