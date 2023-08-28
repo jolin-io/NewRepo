@@ -257,6 +257,7 @@ You can view a condensed version of this notebook by appending the following to 
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
 # ╔═╡ 432ef749-39fc-48b7-a066-1e2bd8f868a8
+# this should always be in another cell as the wrapper creation
 cell_ids = @get cell_ids_wrapper
 
 # ╔═╡ d5d06218-a850-4293-8e4c-6e40bcd32c2a
@@ -1582,7 +1583,7 @@ version = "1.4.1+0"
 # ╠═a3144b7e-01bf-4a9e-bba9-3d6ac8f9fbf2
 # ╠═aaf50fdb-2955-4c37-9ee1-085f51dd7940
 # ╟─31adde32-492f-4c1d-929e-e46ba0a9943a
-# ╠═b64eadc4-d455-4461-9697-6299decdee76
+# ╟─b64eadc4-d455-4461-9697-6299decdee76
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
 # ╠═432ef749-39fc-48b7-a066-1e2bd8f868a8
 # ╠═d5d06218-a850-4293-8e4c-6e40bcd32c2a
