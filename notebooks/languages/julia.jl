@@ -111,7 +111,7 @@ macro get(setter)
 	rerun = Ref{Function}()
 	firsttime = Ref(true)
 	quote
-		isa($setter, Setter) || @error "`@get` only works on `Setter` values.
+		isa($setter, Setter) || @error "`@get` only works on `Setter` values."
 		if $firsttime[]
 			$firsttime[] = false
 			$rerun[] = $(PlutoRunner.GiveMeRerunCellFunction())
