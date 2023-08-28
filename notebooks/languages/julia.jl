@@ -190,17 +190,10 @@ end
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
-# ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
-cell_ids = @get cell_ids_wrapper
-join("&isolated_cell_id=$id" for id in cell_ids)
-
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro CellIDs()
 	Setter(Set())
 end
-
-# ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
-cell_ids = Set()
 
 # ╔═╡ c7e4abfb-6813-4eb0-a31a-2b37e9438355
 cell_ids
@@ -292,6 +285,15 @@ md"""
 
 Happy dashboarding 📈 📊!
 """
+
+# ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
+begin
+	cell_ids = @get cell_ids_wrapper
+	join("&isolated_cell_id=$id" for id in cell_ids)
+end
+
+# ╔═╡ ca13d2c2-f9e2-4595-bc78-2537238fa896
+cell_ids = Set()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
