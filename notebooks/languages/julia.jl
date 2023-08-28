@@ -118,7 +118,7 @@ macro testref()
 end	
 
 # ╔═╡ 0f8c6eed-394f-4219-890b-a460942f3532
-a = @testref
+a, set_a = @testref
 
 # ╔═╡ 01149b68-c48f-4b54-9e08-a521b32096e3
 set_a
