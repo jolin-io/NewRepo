@@ -257,7 +257,10 @@ You can view a condensed version of this notebook by appending the following to 
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
 # ╔═╡ 432ef749-39fc-48b7-a066-1e2bd8f868a8
-
+begin
+	cell_ids = @get cell_ids_wrapper
+	append_this = join("&isolated_cell_id=$id" for id in cell_ids)
+end
 
 # ╔═╡ aedb04d7-a69d-4fff-bf03-65d01169ccca
 md"""
