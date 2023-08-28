@@ -121,7 +121,9 @@ macro get(setter)
 					$setter.rerun = nothing
 				end
 			end
-			$setter.rerun === nothing || @error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
+			if $setter.rerun !== nothing
+				@error "`@get` was already called on the setter. Only use one invocation of `@get` per setter."
+			end
 			$setter.rerun = $rerun[]
 		end
 		get(setter)
