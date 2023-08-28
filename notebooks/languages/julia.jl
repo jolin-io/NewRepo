@@ -138,7 +138,7 @@ set_c = Setter(Dates.now())
 c = @get set_c
 
 # ╔═╡ 32797db7-13f1-4af3-9424-8d7c9c03d1b0
-
+set_c.rerun
 
 # ╔═╡ e4cf0618-e9c6-407f-a8b6-ab40f84d87e8
 begin
