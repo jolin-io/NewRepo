@@ -262,7 +262,7 @@ end
 cell_ids = @get cell_ids_wrapper
 
 # ╔═╡ d5d06218-a850-4293-8e4c-6e40bcd32c2a
-append_this = join("&isolated_cell_id=$id" for id in cell_ids)
+print(join("&isolated_cell_id=$id" for id in cell_ids))
 
 # ╔═╡ aedb04d7-a69d-4fff-bf03-65d01169ccca
 md"""
