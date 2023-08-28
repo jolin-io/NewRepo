@@ -164,7 +164,9 @@ begin
 end
 
 # ╔═╡ 3f312c2c-3cfc-4c67-9de4-582ff502f381
-
+macro CellIDs()
+	Setter(Set())
+end
 
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 set_cell_ids = Setter(Set())
