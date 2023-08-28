@@ -190,9 +190,6 @@ end
 # ╔═╡ 1fb57177-3f16-484f-8581-f8956f6c5a4e
 cell_ids_wrapper = @cell_ids_create_wrapper()
 
-# ╔═╡ b4b867ef-dd04-4788-a747-e5686ae6c54b
-@cell_ids_push! cell_ids_wrapper
-
 # ╔═╡ 74ab2315-a25a-492c-9735-f596185de530
 begin
 	cell_ids = @get cell_ids_wrapper
@@ -1571,7 +1568,6 @@ version = "1.4.1+0"
 # ╠═3f312c2c-3cfc-4c67-9de4-582ff502f381
 # ╠═7962fcf6-4e97-4fe2-afaf-611d72e6661b
 # ╠═1fb57177-3f16-484f-8581-f8956f6c5a4e
-# ╠═b4b867ef-dd04-4788-a747-e5686ae6c54b
 # ╠═74ab2315-a25a-492c-9735-f596185de530
 # ╠═ac931d72-9723-4ced-b048-aa769eeb0196
 # ╠═73474f4c-b760-4c84-96a1-4f7aff20ec31
