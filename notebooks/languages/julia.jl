@@ -97,12 +97,6 @@ b, _set_b = @use_state(Dates.now())
 # ╔═╡ 680c3b38-f20d-4c97-901d-406044d45af7
 typeof(_set_b).name.name
 
-# ╔═╡ ae6f002b-3aa8-4fa7-be95-f0112800c4af
-begin
-	println(Dates.now())
-	_set_b(Dates.now())
-end
-
 # ╔═╡ 05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
 push!()
 
@@ -1577,7 +1571,6 @@ version = "1.4.1+0"
 # ╟─9aaff669-66f8-46da-a42b-47968550e84b
 # ╠═0318f1f7-7d12-4dfd-9100-81e676237f6c
 # ╠═6f8a462c-f919-48ca-984f-6b2f45a1ea35
-# ╠═680c3b38-f20d-4c97-901d-406044d45af7
 # ╠═0f8c6eed-394f-4219-890b-a460942f3532
 # ╠═4eb4728b-afe8-4a9a-906f-40750f908226
 # ╠═35ffd88e-7f51-4596-9efe-903f09ac2dc8
