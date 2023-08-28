@@ -141,7 +141,7 @@ end
 myvar = @testeval()
 
 # ╔═╡ b42d1d6c-f99e-4471-8baa-d8380f0d47cd
-
+another_func()
 
 # ╔═╡ 182f7b6c-cb26-41dc-ad6c-6c474a340231
 macro isolated_cell_ids()
