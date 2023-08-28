@@ -138,7 +138,7 @@ macro testeval()
 end
 
 # ╔═╡ b40c757f-3348-4fae-9d57-f19c9d4fe34f
-myvar, myvarrerun = @testeval()
+myvar = @testeval()
 
 # ╔═╡ b42d1d6c-f99e-4471-8baa-d8380f0d47cd
 another_func()
