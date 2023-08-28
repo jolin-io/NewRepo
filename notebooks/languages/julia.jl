@@ -105,13 +105,16 @@ macro cell_id_push!(cell_ids)
 end
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
-choose, choose_cell_id = md"""
-| Parameter | Choose |
-| --------- | :----- |
-| region 1 | $(@bind country1 PlutoUI.Select(countries; default="World")) |
-| region 2 | $(@bind country2 PlutoUI.Select(countries; default="Germany")) |
-| compare   | $(@bind yaxis PlutoUI.Select(columns; default="co2_per_capita")) |
-""", PlutoRunner.currently_running_cell_id
+begin
+	cell_id_push!(cell_ids)
+	choose = md"""
+	| Parameter | Choose |
+	| --------- | :----- |
+	| region 1 | $(@bind country1 PlutoUI.Select(countries; default="World")) |
+	| region 2 | $(@bind country2 PlutoUI.Select(countries; default="Germany")) |
+	| compare   | $(@bind yaxis PlutoUI.Select(columns; default="co2_per_capita")) |
+	"""
+end
 
 # ╔═╡ 73474f4c-b760-4c84-96a1-4f7aff20ec31
 (; yaxis, country1, country2)
