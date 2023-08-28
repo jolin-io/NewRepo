@@ -92,7 +92,17 @@ cell_ids = Set()
 PlutoRunner.GiveMeRegisterCleanupFunction()
 
 # ╔═╡ 53032629-301e-4c10-95c9-e0f03ca4da5a
-
+macro add_cell_id(cell_ids)
+	quote
+		my_cell_id = $(PlutoRunner.GiveMeCellID)
+		push!(cell_ids, my_cell_id)
+		cleanup = $(PlutoRunner.GiveMeRegisterCleanupFunction())
+		cleanup() do
+			delete!($cell_ids, my_cell_id)
+		end
+		nothing
+	end
+end
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 choose, choose_cell_id = md"""
