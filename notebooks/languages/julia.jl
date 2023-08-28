@@ -118,12 +118,6 @@ end
 # ╔═╡ 01149b68-c48f-4b54-9e08-a521b32096e3
 set_a
 
-# ╔═╡ 591b8313-15e5-497c-a92d-a4d249069808
-begin
-	println(Dates.now())
-	set_a(Dates.now())
-end
-
 # ╔═╡ 05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
 push!()
 
@@ -1603,8 +1597,6 @@ version = "1.4.1+0"
 # ╠═e98574c7-8b09-47f9-b39f-544099c0d4db
 # ╠═0f8c6eed-394f-4219-890b-a460942f3532
 # ╠═4eb4728b-afe8-4a9a-906f-40750f908226
-# ╠═01149b68-c48f-4b54-9e08-a521b32096e3
-# ╠═591b8313-15e5-497c-a92d-a4d249069808
 # ╠═35ffd88e-7f51-4596-9efe-903f09ac2dc8
 # ╠═d167928b-8a64-4f2a-97ad-33c1c3477d3d
 # ╠═05d0b4df-a833-4abf-b5bc-cfb8bb4245cf
