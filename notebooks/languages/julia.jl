@@ -204,9 +204,6 @@ macro CellIDs()
 	Setter(Set())
 end
 
-# ╔═╡ 1226e9df-1df2-41cc-acd1-830b131c1a5e
-macro collect
-
 # ╔═╡ 53032629-301e-4c10-95c9-e0f03ca4da5a
 macro cell_id_push!(cell_ids)
 	quote
