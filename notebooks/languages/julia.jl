@@ -95,7 +95,7 @@ We can combine multiple input widgets together using markdown string and interpo
 b, _set_b = @use_state(Dates.now())
 
 # ╔═╡ 680c3b38-f20d-4c97-901d-406044d45af7
-
+typeof(_set_b).name.name
 
 # ╔═╡ ae6f002b-3aa8-4fa7-be95-f0112800c4af
 begin
