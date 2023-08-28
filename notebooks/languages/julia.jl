@@ -113,7 +113,7 @@ macro testref()
 			$a[] = a2 
 			rerun()
 		end
-		$a[]
+		$a[], set_a
 	end
 end	
 
