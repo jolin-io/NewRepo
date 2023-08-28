@@ -197,11 +197,10 @@ begin
 end
 
 # ╔═╡ 77f75dfb-c581-4de3-9c10-a66d947182bb
-cell_ids_wrapper.rerun
+
 
 # ╔═╡ ac931d72-9723-4ced-b048-aa769eeb0196
 begin
-	@cell_id_push!(cell_ids)
 	choose = md"""
 	| Parameter | Choose |
 	| --------- | :----- |
